@@ -6,7 +6,6 @@
    instance는 class를 바탕으로 실체화 한것.    
    실체화 된 instance는 메모리에 할당 됨.
 
-
 ```
     import java.io.FileWriter;
     import java.io.IOException;
