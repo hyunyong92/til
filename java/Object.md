@@ -3,7 +3,8 @@
 * class와 instance 기본   
    class는 연관된 method를 grouping해서 이름을 붙인 것.   
    
-   instance는 class를 바탕으로 실체화 한것. 실체화 된 instance는 메모리에 할당 됨.
+   instance는 class를 바탕으로 실체화 한것.    
+   실체화 된 instance는 메모리에 할당 됨.
 
 
 ```
