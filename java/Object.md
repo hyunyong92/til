@@ -38,4 +38,32 @@
     }
 ```
 
+* 변수와 method   
+ ````
+class Print{
+    public static String delimiter = "";   //class 소속의 변수를 만들어서 다른 메소드에서 변수를 사용가능 하게 함.
+    public static void A() {
+        System.out.println(delimiter);
+        System.out.println("A");
+        System.out.println("A");
+    }
+    public static void B() {
+        System.out.println(delimiter);
+        System.out.println("B");
+        System.out.println("B");
+    }
+}
+public class MyOOP {
+    public static void main(String[] args) {
+        Print.delimiter = "----";
+        Print.A();
+        Print.B();
+        
+        Print.delimiter = "****";
+        Print.A();
+        Print.B();
+    }
+````
+
+
  
