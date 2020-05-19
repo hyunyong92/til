@@ -101,3 +101,48 @@ public class MyOOP {
 }
 ````
  
+ * instance 의 기본개념   
+        -원형 class를 복제 한 것.  
+        -여러 상태의 class가 동시에 필요할 때 사용.    
+        -new 키워드 이용해서 instance 이름 설정 (*ex)Print p1 = new Print();  
+        -class 파일의 method에 static을 없앰.   
+        
+````
+public class MyOOP {
+        public static void main(String[] args) {
+            Print p1 = new Print();   // new를 사용하여 p1이라는 class의 instance 생성
+            p1.delimiter = "----";
+            p1.A();
+            p1.A();
+            p1.B();
+            p1.B();
+     
+            Print p2 = new Print();   //new를 사용하여 p2라는 class의 instance 생성
+            p2.delimiter = "****";
+            p2.A();
+            p2.A();
+            p2.B();
+            p2.B();
+             
+             
+            p1.A();
+            p2.A();
+            p1.A();
+            p2.A();
+        }
+````
+````class Print {
+        public String delimiter = "";
+     
+        //mehtod에서 static을 지움.
+        public void A() {
+            System.out.println(delimiter);
+            System.out.println("A");
+            System.out.println("A");
+        }
+     
+        public void B() {
+            System.out.println(delimiter);
+            System.out.println("B");
+            System.out.println("B");
+        }
