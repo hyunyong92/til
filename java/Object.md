@@ -65,5 +65,39 @@ public class MyOOP {
     } 
 ````
 
+* class의 형식   
+````
+//class라는 키워드로 Print라는 class 생성
+class Print {   
+    public static String delimiter = "";      //class의 member(변수,method) : A, B, deliimiter
+ 
+    public static void A() {
+        System.out.println(delimiter);
+        System.out.println("A");
+        System.out.println("A");
+    }
+ 
+    public static void B() {
+        System.out.println(delimiter);
+        System.out.println("B");
+        System.out.println("B");
+    }
+}
 
+public class MyOOP {
+    public static void main(String[] args) {
+        Print.delimiter = "----";
+        Print.A();
+        Print.A();
+        Print.B();
+        Print.B();
+ 
+        Print.delimiter = "****";
+        Print.A();
+        Print.A();
+        Print.B();
+        Print.B();
+    }
+}
+````
  
