@@ -146,3 +146,46 @@ public class MyOOP {
             System.out.println("B");
             System.out.println("B");
         }
+````
+
+* class와 instance의 관계    
+      -class의 변수를 바꾸면 모든 instance의 변수의 값이 바뀐다.   
+      -instance에서 변수를 바꾸면 다른 instance의 값은 변하지 않는다.
+ ````
+        class Foo{
+            public static String classVar = "I class var";
+            public String instanceVar = "I instance var";
+            public static void classMethod() {
+                System.out.println(classVar); // Ok
+                System.out.println(instanceVar); // Error
+            }
+            public void instanceMethod() {
+                System.out.println(classVar); // Ok
+                System.out.println(instanceVar); // Ok
+            }
+        }
+        public class StaticApp {
+ 
+     System.out.println(Foo.classVar); // OK
+             System.out.println(Foo.instanceVar); // Error
+             Foo.classMethod();
+             Foo.instanceMethod();
+              
+             Foo f1 = new Foo();
+             Foo f2 = new Foo();
+          
+             System.out.println(f1.classVar); // I class var
+             System.out.println(f1.instanceVar); // I instance var
+         
+             f1.classVar = "changed by f1";
+             System.out.println(Foo.classVar); // changed by f1
+             System.out.println(f2.classVar);  // changed by f1
+          
+             f1.instanceVar = "changed by f1";
+             System.out.println(f1.instanceVar); // changed by f1
+             System.out.println(f2.instanceVar); // I instance var
+         }
+      
+     }
+   ````      
+static은 class인지 instance인지 구분하는 역할
