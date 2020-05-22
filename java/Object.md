@@ -195,3 +195,10 @@ public class MyOOP {
  class와 이름이 같은 method를 만들어 사용한다.            
     -this 키워드는 class가 instance화 되었을 때 instance를 가르키는 역할을 한다.
   
+ 
+* 접근제어자   
+ -접근제어자는 변수,클래스,메소드를 선언할 때 사용되며 해당 변수,클래스,메소드의 접근을 제한하는 역할을 한다.   
+ -public, private, protected가 있는데   
+ public -모든 접근이 가능하다.   
+ private - 같은 클래스 내에서만 접근이 가능하다.    
+ protected - 같인 패키지에 속하는 클래스와 하위클래스 들에서 접근이 가능하다.
