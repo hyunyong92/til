@@ -166,7 +166,7 @@ public class MyOOP {
         }
         public class StaticApp {
  
-     System.out.println(Foo.classVar); // OK
+            System.out.println(Foo.classVar); // OK
              System.out.println(Foo.instanceVar); // Error
              Foo.classMethod();
              Foo.instanceMethod();
@@ -188,4 +188,10 @@ public class MyOOP {
       
      }
    ````      
-static은 class인지 instance인지 구분하는 역할
+ static은 class인지 instance인지 구분하는 역할   
+
+* 생성자           
+ -생성자는 instance를 생성할 때 초기에 작업을 해야만 하는 것이 있을 때    
+ class와 이름이 같은 method를 만들어 사용한다.            
+    -this 키워드는 class가 instance화 되었을 때 instance를 가르키는 역할을 한다.
+  
