@@ -155,3 +155,45 @@
     -default : 같은 패키지에서는 제한이 없지만 다른 패키지에서는 호출 불가능.
     -private : 동일한 패키지이건 다른 패키지이건 상관없이 오로지 클래스 내부에서만 사용 가능.
     
+##Getter / Setter 메소드
+ * 일반적으로 객체 지향 프로그래밍에서는 객체의 필드를 객체 외부에서 직접적으로 접근하는 것을 막는다.  
+  외부에서 마음대로 변경할 경우 객체의 무결성이 깨질 수 있기 때문이다.   
+  이러한 이유로 메소드를 통해 필드를 변경하는 방법을 선호하는데, 필드는 외부에서 접근할 수 없도록 하고 메소드를 공개해서 메소드를 통해 필드에 접근 하도록 한다.    
+  -Setter : 메소드는 매개값을 검증해서 유효한 값만 객체의 필드로 저장할 수 있는데 , 이러한 역할을 하는 메소드.   
+  ex) 자동차의 속도를 setSpeed() 메소드로 변경할 경우   
+  ````
+void setSpeed(double speed){
+    if(speed < 0){     //매개값이 음수일 경우 speed 필드에 0을 저장하고 메소드 실행을 종료하는 검증코드.
+        this.speed = 0;
+        return;
+     } else {
+        this.speed = speed;
+        }
+     }
+ ````   
+ * 외부에서 데이터를 읽을 때도 메소드를 사용하는 것이 좋다. 필드값을 직접 사용하면 부적절한 경우도 있기 때문.
+ -Getter : 메소드로 필드값을 가공한 후 외부로 전달하는 메소드.
+ ````
+double getSpeed(){
+    double km = speed*1.6;  //필드값인 마일을 km단위로 환산후 외부로 리턴
+    return km;
+}
+````
+* 클래스를 선언할 때 private필드로 선언해서 외부로부터 보호하고, 필드에 대한 Setter / Getter 메소드를 작성해서 필드값을 안전하게 변경/사용 하는것이 좋다.
+````
+// Setter와 Getter 메소드 선언하는 방법. 검증코드나 변환코드는 필요에 따라 추가
+    private 타입 fieldName;  //필드접근 제한자 private
+//Getter
+    public 리턴타입 getFieldName() {  // 리턴타입 : 필드타입 , 메소드 이름 : get+필드이름(필드이름의 첫글자는 대문자), 리턴값 : 필드값
+    return fieldName;
+}
+//만약 필드 타입이 boolean인 경우에는 Getter는 get으로 시작하지않고 is로 시작하는것 이 관례
+    private boolean stop;
+    public boolean isStop() {
+    return stop;
+} 
+//
+//Setter
+    public void setFieldName(필드타입 fieldName) {    // 리턴타입 : void, 메소드 이름 : set+필드이름(첫글자 대문자), 매개변수 타입 : 필드타입
+    this.fieldName = fieldName;
+}. 
